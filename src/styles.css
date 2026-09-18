@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --color-bg: #0e0e0c;
+  --color-surface: #171714;
+  --color-raised: #1e1e1a;
+  --color-fg: #f2efe6;
+  --color-muted: #9b978c;
+  --color-subtle: #6f6c64;
+  --color-line: #2a2a24;
+  --color-primary: #e8e2d4;
+  --color-primary-fg: #121210;
+  --color-sage: #9aab94;
+  --color-warn: #c4a574;
+  --color-danger: #c17a6e;
+  --color-ring: #e8e2d4;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 28px;
+  --radius-3xl: 32px;
+
+  --shadow-border: 0 0 0 1px rgba(242, 239, 230, 0.08);
+  --shadow-border-hover: 0 0 0 1px rgba(242, 239, 230, 0.14);
+  --shadow-focus: 0 0 0 1px color-mix(in oklab, var(--color-primary) 45%, transparent);
+  --shadow-selected: 0 0 0 1px color-mix(in oklab, var(--color-primary) 40%, transparent);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    color-scheme: dark;
+    background: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100dvh;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-sage) 40%, transparent);
+    color: var(--color-fg);
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+  }
+
+  .hairline {
+    box-shadow: var(--shadow-border);
+  }
+
+  .hairline-hover:hover {
+    box-shadow: var(--shadow-border-hover);
+  }
+
+  .selected-ring {
+    box-shadow: var(--shadow-selected);
+  }
+
+  .focus-ring:focus-visible {
+    box-shadow: var(--shadow-focus);
+  }
+
+  .reveal {
+    animation: rise 400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .reveal-2 {
+    animation-delay: 80ms;
+  }
+  .reveal-3 {
+    animation-delay: 140ms;
+  }
+  .reveal-4 {
+    animation-delay: 200ms;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-2,
+  .reveal-3,
+  .reveal-4 {
+    animation: none;
+  }
+}

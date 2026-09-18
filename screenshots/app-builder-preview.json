@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Easy Street",
+      "hasCanvas": false,
+      "bodyTextLen": 394,
+      "bodyTextHash": "996bea1abf396c03975b484bd41aef2b3d9f872ea237ad703e6d6b8ec1eafcbf",
+      "bodyTextPrefix": "EASY STREET No job. No training. Still need money. Easy is not a",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Easy Street",
+      "hasCanvas": false,
+      "bodyTextLen": 250,
+      "bodyTextHash": "b0256373d4ea1a42ff0455f459a024767730dbe1411ad95a4c8acffe9d8e3ef7",
+      "bodyTextPrefix": "EASY STREET No job. No training. Still need money. Easy is not a",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
